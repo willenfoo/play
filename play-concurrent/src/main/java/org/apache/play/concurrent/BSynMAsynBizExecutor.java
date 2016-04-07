@@ -156,13 +156,7 @@ public abstract class BSynMAsynBizExecutor<T> {
         new BSynMAsynBizExecutor<Integer>("test", 5, datas) {
             @Override
             public void executes(Integer object) {
-                try {
-                    long time = Double.valueOf(Math.random() * 1000).longValue();
-                    Thread.sleep(time);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    logger.error(e);
-                }
+                System.out.println(object);
             }
         };
 

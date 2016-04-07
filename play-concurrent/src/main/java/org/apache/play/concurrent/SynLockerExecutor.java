@@ -252,56 +252,45 @@ public abstract class SynLockerExecutor {
     public static void test() {
         Thread t = new Thread() {
             public void run() {
-                int idx = 0;
-                while (true) {
-                    Request.setId(Thread.currentThread().getName() + "@" + (++idx));
-                    try {
-                        new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
-                            @Override
-                            public void execute() {
-                                try {
-                                    System.err.println(Request.getId() + " before " + "@"
-                                            + System.currentTimeMillis());
-                                    long t = Double.valueOf(Math.random() * 100).longValue();
-                                    Thread.currentThread().sleep(t);
-                                    System.err.println(Request.getId() + " exec used: " + t
-                                            + " after " + "@" + System.currentTimeMillis());
-                                } catch (InterruptedException e) {
-                                    logger.error(e);
-                                }
+                try {
+                    new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
+                        @Override
+                        public void execute() {
+                            try {
+                            	for (int i = 0; i < 100; i++) {
+                            		System.out.println(i);
+                            		Thread.currentThread().sleep(200);
+								}
+                            } catch (InterruptedException e) {
+                                logger.error(e);
                             }
-                        };
-                    } catch (Exception ex) {
-                        logger.error(ex);
-                    }
+                        }
+                    };
+                } catch (Exception ex) {
+                    logger.error(ex);
                 }
+            
             }
         };
         t.start();
         t = new Thread() {
             public void run() {
-                int idx = 0;
-                while (true) {
-                    Request.setId(Thread.currentThread().getName() + "@" + (++idx));
-                    try {
-                        new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
-                            @Override
-                            public void execute() {
-                                try {
-                                    System.err.println(Request.getId() + " before " + "@"
-                                            + System.currentTimeMillis());
-                                    long t = Double.valueOf(Math.random() * 100).longValue();
-                                    Thread.currentThread().sleep(t);
-                                    System.err.println(Request.getId() + " exec used: " + t
-                                            + " after " + "@" + System.currentTimeMillis());
-                                } catch (InterruptedException e) {
-                                    logger.error(e);
-                                }
+                try {
+                    new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
+                        @Override
+                        public void execute() {
+                        	try {
+                            	for (int i = 100; i < 200; i++) {
+                            		System.out.println(i);
+                            		Thread.currentThread().sleep(200);
+								}
+                            } catch (InterruptedException e) {
+                                logger.error(e);
                             }
-                        };
-                    } catch (Exception ex) {
-                        logger.error(ex);
-                    }
+                        }
+                    };
+                } catch (Exception ex) {
+                    logger.error(ex);
                 }
             }
         };

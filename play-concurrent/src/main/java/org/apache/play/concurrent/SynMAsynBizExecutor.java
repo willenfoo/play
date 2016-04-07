@@ -105,9 +105,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         new SynMAsynBizExecutor(map, "test1", 1) {
             @Override
             public void execute() {
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {}
+            	System.out.println("test1");
                 this.setResultRef(getIndex());
             }
         };
@@ -115,9 +113,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         new SynMAsynBizExecutor(map, "test2", 2) {
             @Override
             public void execute() {
-                try {
-                    Thread.sleep(800);
-                } catch (InterruptedException e) {}
+            	System.out.println("test2");
                 this.setResultRef(true);
             }
         };
@@ -125,9 +121,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         new SynMAsynBizExecutor(map, "test3", 3) {
             @Override
             public void execute() {
-                try {
-                    Thread.sleep(300);
-                } catch (InterruptedException e) {}
+            	System.out.println("test3");
                 this.setResultRef(getIndex());
             }
         };
@@ -135,9 +129,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         new SynMAsynBizExecutor(map, "test4", 4) {
             @Override
             public void execute() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {}
+            	System.out.println("test4");
                 this.setResultRef(this.getIndex());
                 // throw new DomainException(123, "TEST");
             }
