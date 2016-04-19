@@ -325,5 +325,8 @@
 		<module>play-util</module>
 		<module>play-config</module>
     <module>play-concurrent</module>
+    <module>play-web</module>
+    <module>play-service</module>
+    <module>play-cache</module>
   </modules>
 </project>
