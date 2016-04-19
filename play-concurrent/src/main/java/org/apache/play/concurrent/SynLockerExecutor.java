@@ -9,7 +9,7 @@ import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.play.config.DynamicZookeeper;
 import org.apache.play.log.Logger;
 import org.apache.play.log.LoggerFactory;
-import org.apache.play.util.DateUtil;
+import org.apache.play.util.DateUtils;
 import org.apache.play.util.Request;
 import org.apache.zookeeper.KeeperException;
 
@@ -154,7 +154,7 @@ public abstract class SynLockerExecutor {
                  * 设置最后访问时间 为housekeeping做准备
                  */
                 client.setData().forPath(key,
-                        String.valueOf(DateUtil.getUnixTimestamp()).getBytes());
+                        String.valueOf(DateUtils.getUnixTimestamp()).getBytes());
                 break;
             } catch (KeeperException.ConnectionLossException ex) {
                 client = null;
@@ -241,7 +241,7 @@ public abstract class SynLockerExecutor {
             } else {
                 String lastime = new String(client.getData().forPath(path));
                 if (lastime != null && lastime.trim().length() > 0) {
-                    if (Integer.valueOf(lastime) < DateUtil.getUnixTimestamp() - 86400) {
+                    if (Integer.valueOf(lastime) < DateUtils.getUnixTimestamp() - 86400) {
                         client.delete().forPath(path);
                     }
                 }

@@ -50,7 +50,7 @@ public class BeanUtil {
                 } else { 
                     String type = field.getGenericType().toString();    //获取属性的类型
                      if(type.equals("class java.util.Date")){
-                         map.put(field.getName(), DateUtil.getDateFormat((Date)field.get(model), "yyyy-MM-dd HH:mm:ss"));  
+                         map.put(field.getName(), DateUtils.getDateFormat((Date)field.get(model), "yyyy-MM-dd HH:mm:ss"));  
                      } else {  
                          map.put(field.getName(), field.get(model));
                      }
@@ -63,7 +63,7 @@ public class BeanUtil {
     }
 	
 	public static void main(String[] args){
-	    DateUtil util = new DateUtil();
+	    DateUtils util = new DateUtils();
 	    MetaObject metaObject = DefaultObjectFactory.getMetaObject(util);
 	    System.out.println(metaObject.getValue("weeks"));
 	}

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.configuration.Configuration;
-import org.apache.play.util.StringUtil;
+import org.apache.play.util.StringUtils;
 
 /**
  * subset配置类，默认读取前缀开头的相关配置，当没有相关配置设置时，读取当前key相关设置
@@ -31,7 +31,7 @@ public class PrefixPriorityConfig extends DynamicConfig {
 	public String getPrefix() {
 
 		String prefix_ = prefix;
-		if (!StringUtil.isEmpty(prefix) && !prefix.endsWith(".")) {
+		if (!StringUtils.isEmpty(prefix) && !prefix.endsWith(".")) {
 			prefix_ = prefix + ".";
 		} else {
 			prefix_ = "";
@@ -273,12 +273,12 @@ public class PrefixPriorityConfig extends DynamicConfig {
 	}
 
 	public String getString(String root, String key, String defaultValue) {
-		if (!StringUtil.isEmpty(root)
+		if (!StringUtils.isEmpty(root)
 				&& super.containsKey(root + "." + this.getPrefix() + key)) {
 			return super.getString(root + "." + this.getPrefix() + key);
 		} else if (super.containsKey(this.getPrefix() + key)) {
 			return super.getString(this.getPrefix() + key);
-		} else if (!StringUtil.isEmpty(root)
+		} else if (!StringUtils.isEmpty(root)
 				&& super.containsKey(root + "." + key)) {
 			return super.getString(root + "." + key);
 		} else {

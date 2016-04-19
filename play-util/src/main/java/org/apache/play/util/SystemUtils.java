@@ -1,5 +1,7 @@
 package org.apache.play.util;
 
+import java.lang.management.ManagementFactory;
+
 public class SystemUtils {
 
 	/**
@@ -8,6 +10,6 @@ public class SystemUtils {
 	 * @return
 	 */
 	public static String getProcessId() {
-		return java.lang.management.ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+		return ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 	}
 }

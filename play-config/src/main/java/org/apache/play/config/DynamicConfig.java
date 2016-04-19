@@ -24,8 +24,8 @@ import org.apache.play.config.utils.ConfigUtil;
 import org.apache.play.log.Logger;
 import org.apache.play.log.LoggerFactory;
 import org.apache.play.util.Constants;
-import org.apache.play.util.MD5Util;
-import org.apache.play.util.StringUtil;
+import org.apache.play.util.Md5Utils;
+import org.apache.play.util.StringUtils;
 
 /**
  * 动态检测&加载变化内容<br>
@@ -80,7 +80,7 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
     private void regist() {
         
         String configFile = null;
-        if(!StringUtil.isEmpty(getProfile())){
+        if(!StringUtils.isEmpty(getProfile())){
             configFile =
                     System.getProperty(SYS_CONFIG_DIR, SYS_CONFIG_DIR_DEF) + File.separator
                     + getProfile() + _settingFileName + "." + type;
@@ -106,9 +106,9 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
          * 本地可动态配置 项目本地配置文件位置通过启动参数-Dapp.home.dir=xxx进行设置
          * 配置文件全路径：xxx/config/yy.type或者xxx/config/profile.yy.type
          */
-        if(!StringUtil.isEmpty(getAppHomeDir())){
+        if(!StringUtils.isEmpty(getAppHomeDir())){
             
-            if(!StringUtil.isEmpty(getProfile())){
+            if(!StringUtils.isEmpty(getProfile())){
                 configFile =
                         getAppHomeDir() + File.separator + "config" + File.separator
                                 + getProfile() + _settingFileName + "." + type;
@@ -141,9 +141,9 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
         CompositeConfiguration compositeConfiguration = new SecutiryCompositeConfiguration();
         compositeConfiguration.setThrowExceptionOnMissing(_throwExceptionOnMissing);
         
-        if(!StringUtil.isEmpty(getAppHomeDir())){
+        if(!StringUtils.isEmpty(getAppHomeDir())){
             
-            if (!StringUtil.isEmpty(getProfile())) {
+            if (!StringUtils.isEmpty(getProfile())) {
                 addConfig(compositeConfiguration, getAppHomeDir() + File.separator + "config"
                         + File.separator + getProfile() + "%s");
             }
@@ -152,7 +152,7 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
                     + File.separator + "%s");
         }
 
-        if (!StringUtil.isEmpty(getProfile())) {
+        if (!StringUtils.isEmpty(getProfile())) {
             addConfig(compositeConfiguration,
                     System.getProperty(SYS_CONFIG_DIR, SYS_CONFIG_DIR_DEF) + File.separator
                             + getProfile() + "%s");
@@ -163,7 +163,7 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
         
         
         
-        if (!StringUtil.isEmpty(getProfile())) {
+        if (!StringUtils.isEmpty(getProfile())) {
             addConfig(compositeConfiguration, "classpath:META-INF/config/local/" + getProfile()
                     + "%s");
         }
@@ -197,7 +197,7 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
                     resource = new FileInputStream(new File(location));
                 }
 
-                if (!StringUtil.isEmpty(this.getEncoding())) {
+                if (!StringUtils.isEmpty(this.getEncoding())) {
 
                     config.load(resource, this.getEncoding());
                 } else {
@@ -299,9 +299,9 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
 
         String newStr = this.configToString(config);
 
-        String old_ = MD5Util.md5Hex(oldStr);
+        String old_ = Md5Utils.getMD5(oldStr);
 
-        String new_ = MD5Util.md5Hex(newStr);
+        String new_ = Md5Utils.getMD5(newStr);
         /**
          * 当前配置项没有变化
          */

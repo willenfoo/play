@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.commons.configuration.Configuration;
 import org.apache.play.config.IConfigListener;
 import org.apache.play.config.dict.ConfigFileDict;
-import org.apache.play.util.StringUtil;
+import org.apache.play.util.StringUtils;
 
  
 
@@ -110,6 +110,6 @@ public class ConfigUtil {
     }
     
     public static String getAppConfigDir(){
-        return StringUtil.isEmpty(getAppHomeDir())?getSysConfigDir():getAppHomeDir()+"/config";
+        return StringUtils.isEmpty(getAppHomeDir())?getSysConfigDir():getAppHomeDir()+"/config";
     }
 }

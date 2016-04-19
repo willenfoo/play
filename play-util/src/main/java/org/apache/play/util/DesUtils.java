@@ -17,7 +17,7 @@ public class DesUtils {
 	
 	private void init(String keyString){
 		try {
-			if(!StringUtil.isEmpty(keyString)){
+			if(!StringUtils.isEmpty(keyString)){
 				strDefaultKey = keyString;
 			}
 			Key key = getKey(strDefaultKey.getBytes());

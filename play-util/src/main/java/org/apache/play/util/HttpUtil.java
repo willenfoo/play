@@ -60,7 +60,7 @@ public class HttpUtil {
      * @return    页面内容
      */
     public static String doGet(String url,Map<String,String> params,String charset){
-        if(StringUtil.isEmpty(url)){
+        if(StringUtils.isEmpty(url)){
             return null;
         }
         try {
@@ -102,7 +102,7 @@ public class HttpUtil {
      * @return    页面内容
      */
     public static String doPost(String url,Map<String,String> params,String charset){
-        if(StringUtil.isEmpty(url)){
+        if(StringUtils.isEmpty(url)){
             return null;
         }
         try {
@@ -147,7 +147,7 @@ public class HttpUtil {
      * @return    页面内容
      */
     public static String doPostJson(String url ,String requestJsonParams, String charset){
-        if(StringUtil.isEmpty(url)){
+        if(StringUtils.isEmpty(url)){
             return null;
         }
         try {
