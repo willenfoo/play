@@ -12,7 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.play.cache.CacheVersion;
 import org.apache.play.cache.dao.ICacheVersionDAO;
 import org.apache.play.cache.dao.ibatis.mapper.CacheVersionMapper;
- 
+import org.apache.play.dao.ibatis.AbsStrIDIBatisDAOImpl;
 import org.apache.play.dao.ibatis.IBatisDAOException;
 import org.apache.play.dao.ibatis.ISMapper;
 import org.apache.play.dao.ibatis.SqlmapUtils;

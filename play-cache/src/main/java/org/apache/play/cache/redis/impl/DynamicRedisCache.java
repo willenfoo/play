@@ -144,7 +144,7 @@ public class DynamicRedisCache extends PrefixPriorityConfig
             String server = (String) servers[i];
             String port = (String) ports[i];
             jedisShardInfo = new JedisShardInfo(server, port);
-            /*jedisShardInfo.setTimeout(config.getInt(prefix_ + "redis.timeout"));*/
+            jedisShardInfo.setTimeout(config.getInt(prefix_ + "redis.timeout"));
             list.add(jedisShardInfo);
         }
         ShardedJedisPool jedis = new ShardedJedisPool(redisCfg, list);

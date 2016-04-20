@@ -1,4 +1,4 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.lang.management.ManagementFactory;
 import java.sql.Connection;
@@ -14,15 +14,14 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.Configuration;
-
-import com.tower.service.exception.DataAccessException;
-import com.tower.service.log.Logger;
-import com.tower.service.log.LoggerFactory;
-import com.tower.service.reflection.MetaObject;
-import com.tower.service.reflection.factory.DefaultObjectFactory;
-import com.tower.service.util.NetUtils;
-import com.tower.service.util.Request;
-import com.tower.service.util.SPUtil;
+import org.apache.play.exception.DataAccessException;
+import org.apache.play.log.Logger;
+import org.apache.play.log.LoggerFactory;
+import org.apache.play.reflection.MetaObject;
+import org.apache.play.reflection.factory.DefaultObjectFactory;
+import org.apache.play.util.NetUtils;
+import org.apache.play.util.Request;
+import org.apache.play.util.SPUtil;
 
 @Intercepts({ @Signature(method = "prepare", type = StatementHandler.class, args = { Connection.class }) })
 public class StatementHandlerPlugin implements Interceptor {

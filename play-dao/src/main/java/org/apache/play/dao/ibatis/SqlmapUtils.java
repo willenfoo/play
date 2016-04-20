@@ -1,4 +1,4 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;

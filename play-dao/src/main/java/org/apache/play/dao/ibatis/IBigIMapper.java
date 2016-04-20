@@ -1,8 +1,8 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.math.BigInteger;
 
-import com.tower.service.cache.IModel;
+import org.apache.play.cache.IModel;
 
 /**
  * 主键为长整型的 ibatis 数据访问接口

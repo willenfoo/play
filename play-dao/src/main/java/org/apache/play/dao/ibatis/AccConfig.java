@@ -1,12 +1,11 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.play.config.DynamicConfig;
+import org.apache.play.config.dict.ConfigComponent;
+import org.apache.play.config.dict.ConfigFileDict;
 import org.springframework.stereotype.Component;
-
-import com.tower.service.config.DynamicConfig;
-import com.tower.service.config.dict.ConfigComponent;
-import com.tower.service.config.dict.ConfigFileDict;
 
 @Component(ConfigComponent.AccConfig)
 public class AccConfig extends DynamicConfig {

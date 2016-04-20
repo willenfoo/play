@@ -1,4 +1,4 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.util.List;
 import java.util.Map;

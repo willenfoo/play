@@ -1,10 +1,10 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.util.List;
 import java.util.Map;
 
-import com.tower.service.dao.MapPage;
-import com.tower.service.dao.Page;
+import org.apache.play.dao.MapPage;
+import org.apache.play.dao.Page;
 
 /**
  * ibatis 基础数据访问接口

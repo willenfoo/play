@@ -1,11 +1,10 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
-
-import com.tower.service.cache.IModel;
+import org.apache.play.cache.IModel;
 
 /**
  * ibatis 基础数据访问接口

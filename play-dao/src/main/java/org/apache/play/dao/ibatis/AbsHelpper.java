@@ -1,9 +1,9 @@
-package com.tower.service.dao.ibatis;
+package org.apache.play.dao.ibatis;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tower.service.dao.IHelpper;
+import org.apache.play.dao.IHelpper;
 
 public abstract class AbsHelpper<T> implements IHelpper<T> {
   
