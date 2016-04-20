@@ -3,6 +3,7 @@ package org.apache.play.service.impl;
 import javax.annotation.Resource;
 
 import org.apache.play.config.dict.ConfigComponent;
+import org.apache.play.domain.IResult;
 import org.apache.play.log.Logger;
 import org.apache.play.log.LoggerFactory;
 import org.apache.play.service.IService;
