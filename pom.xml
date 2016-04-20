@@ -141,9 +141,14 @@
 			<version>3.3.1</version>
 		</dependency>
 		<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>1.8.4</version> 
+			</dependency>
+		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.3</version>
+			<version>1.8.4</version>
 		</dependency>
 		<!-- cglib asm 动�?代理，字节码 end -->
 
@@ -328,5 +333,8 @@
     <module>play-web</module>
     <module>play-service</module>
     <module>play-cache</module>
+    <module>play-service-impl</module>
+    <module>play-dao</module>
+    <module>play-domain</module>
   </modules>
 </project>
