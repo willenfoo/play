@@ -25,7 +25,7 @@ public abstract class AbsServiceImpl<T extends IResult> implements IService<T> {
 	}
 	
 	protected static RpcContext context = RpcContext.getContext();
-    @Override
+    
     public String getRemoteHost() {
         return context.getRemoteHost();
     }

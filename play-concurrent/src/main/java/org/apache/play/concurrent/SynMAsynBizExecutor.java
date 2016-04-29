@@ -54,7 +54,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         Executor.execute(this);
     }
 
-    @Override
+    
     public void run() {
         final long start = System.currentTimeMillis();
         Request.setId(this.getReqId());
@@ -103,7 +103,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
 
         ConcurrentHashMap<Integer, Object> map = new ConcurrentHashMap<Integer, Object>();
         new SynMAsynBizExecutor(map, "test1", 1) {
-            @Override
+            
             public void execute() {
             	System.out.println("test1");
                 this.setResultRef(getIndex());
@@ -111,7 +111,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         };
 
         new SynMAsynBizExecutor(map, "test2", 2) {
-            @Override
+            
             public void execute() {
             	System.out.println("test2");
                 this.setResultRef(true);
@@ -119,7 +119,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         };
 
         new SynMAsynBizExecutor(map, "test3", 3) {
-            @Override
+            
             public void execute() {
             	System.out.println("test3");
                 this.setResultRef(getIndex());
@@ -127,7 +127,7 @@ public abstract class SynMAsynBizExecutor implements Runnable {
         };
 
         new SynMAsynBizExecutor(map, "test4", 4) {
-            @Override
+            
             public void execute() {
             	System.out.println("test4");
                 this.setResultRef(this.getIndex());

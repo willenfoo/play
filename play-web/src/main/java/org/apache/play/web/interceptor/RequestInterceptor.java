@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.play.cache.CacheSwitcher;
 import org.apache.play.util.Request;
-import org.apache.play.web.util.HttpRequestUtil;
+import org.apache.play.web.util.HttpServletUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,14 +15,14 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RequestInterceptor.class);
 
-	@Override
+	
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		
 		String rid = request.getHeader("X-Request-ID");
 		
 		String cached = request.getHeader("X-Cached");
 		
-		String ip = HttpRequestUtil.getIpAddr(request);
+		String ip = HttpServletUtils.getIpAddr(request);
 		Request.setRIP(ip);
 		
 		LOGGER.debug("rid: {}", rid);
@@ -39,7 +39,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 		return true;
 	}
 
-	@Override
+	
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
 		Request.unset();
 		CacheSwitcher.unset();

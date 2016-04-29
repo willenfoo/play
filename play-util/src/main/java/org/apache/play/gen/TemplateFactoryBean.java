@@ -15,7 +15,6 @@ public class TemplateFactoryBean implements FactoryBean {
 
   private String path;
 
-  @Override
   public Object getObject() throws Exception {
     configuration = new Configuration();
     Assert.hasLength(path);
@@ -29,12 +28,11 @@ public class TemplateFactoryBean implements FactoryBean {
     return configuration;
   }
 
-  @Override
+ 
   public Class getObjectType() {
     return Configuration.class;
   }
 
-  @Override
   public boolean isSingleton() {
     return true;
   }

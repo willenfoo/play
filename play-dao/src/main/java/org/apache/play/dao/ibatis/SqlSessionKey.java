@@ -13,7 +13,7 @@ public class SqlSessionKey {
   private DataSource definition;
   private ExecutorType executeType;
 
-  @Override
+  
   public boolean equals(Object obj) {
     if (!(obj instanceof SqlSessionKey)) {
       return false;
@@ -22,7 +22,7 @@ public class SqlSessionKey {
     return definition == other.definition && executeType == other.executeType;
   }
 
-  @Override
+  
   public int hashCode() {
     return (definition.hashCode() << 8) | (executeType.hashCode());
   }

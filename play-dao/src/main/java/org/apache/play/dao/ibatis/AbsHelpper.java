@@ -12,7 +12,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#getTowerTabName()
    */
-  @Override
+  
   public String getTowerTabName() {
     return TowerTabName;
   }
@@ -20,7 +20,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#setTowerTabName(java.lang.String)
    */
-  @Override
+  
   public void setTowerTabName(String TowerTabName) {
     this.TowerTabName = TowerTabName;
   }
@@ -37,7 +37,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#setOrderByClause(java.lang.String)
    */
-  @Override
+  
   public void setOrderByClause(String orderByClause) {
     this.orderByClause = orderByClause;
   }
@@ -46,7 +46,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#getOrderByClause()
    */
-  @Override
+  
   public String getOrderByClause() {
     return orderByClause;
   }
@@ -57,7 +57,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#setDistinct(boolean)
    */
-  @Override
+  
   public void setDistinct(boolean distinct) {
     this.distinct = distinct;
   }
@@ -66,7 +66,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#isDistinct()
    */
-  @Override
+  
   public boolean isDistinct() {
     return distinct;
   }
@@ -75,7 +75,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#getOredCriteria()
    */
-  @Override
+  
   public List<T> getOredCriteria() {
     return oredCriteria;
   }
@@ -114,7 +114,7 @@ public abstract class AbsHelpper<T> implements IHelpper<T> {
    * (non-Javadoc)
    * @see com.tower.service.dao.ibatis.IHelpper#clear()
    */
-  @Override
+  
   public void clear() {
     oredCriteria.clear();
     orderByClause = null;

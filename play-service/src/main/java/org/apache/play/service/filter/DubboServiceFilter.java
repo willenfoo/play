@@ -27,7 +27,7 @@ public class DubboServiceFilter implements Filter {
 		logger.info("DubboServiceFilter created");
 	}
 
-	@Override
+	
 	public Result invoke(Invoker<?> invoker, Invocation invocation)
 			throws RpcException {
 		RpcContext context = RpcContext.getContext();

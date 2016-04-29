@@ -36,7 +36,7 @@ public class TabReader_SqlSvr extends TabReader {
     return nullable == null ? "yes" : "0".equals(nullable) ? "no" : "yes";
   }
   
-  @Override
+  
   protected String getSql() {//cast(isnull(g.[value],'') as varchar(100))
     return "select ordinal_position=col.column_id,col.name as column_name,column_comment=cast(ep.value as varchar(100)),"
         + "t.name as data_type,column_default=cast(null as varchar(100)),(select top 1 ind.is_primary_key from sys.index_columns ic "

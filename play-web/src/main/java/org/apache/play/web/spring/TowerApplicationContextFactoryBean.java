@@ -20,28 +20,28 @@ public class TowerApplicationContextFactoryBean implements InitializingBean,
 	}
 	
 	private ApplicationContext applicationContext;
-	@Override
+	
 	public void setApplicationContext(ApplicationContext applicationContext)
 			throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 	private ClassPathXmlApplicationContext classPathXmlApplicationContext;
-	@Override
+	
 	public ClassPathXmlApplicationContext getObject() throws Exception {
 		return classPathXmlApplicationContext;
 	}
 
-	@Override
+	
 	public Class<?> getObjectType() {
 		return ClassPathXmlApplicationContext.class;
 	}
 
-	@Override
+	
 	public boolean isSingleton() {
 		return true;
 	}
 
-	@Override
+	
 	public void afterPropertiesSet() throws Exception {
 		
 	}

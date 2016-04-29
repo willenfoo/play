@@ -21,87 +21,87 @@ public class Slf4jLogger implements Logger, Serializable {
 		_impl = impl;
 	}
 
-	@Override
+	
 	public String getName() {
 		return _impl.getName();
 	}
 
-	@Override
+	
 	public void trace(String message) {
 		_impl.trace(Request.getId() + message);
 	}
 
-	@Override
+	
 	public void trace(String format, Object... args) {
 		_impl.trace(Request.getId() + format, args);
 	}
 
-	@Override
+	
 	public boolean isTraceEnabled() {
 		return _impl.isTraceEnabled();
 	}
 
-	@Override
+	
 	public void debug(String message) {
 		_impl.debug(Request.getId() + message);
 	}
 
-	@Override
+	
 	public void debug(String format, Object... args) {
 		_impl.debug(Request.getId() + format, args);
 	}
 
-	@Override
+	
 	public boolean isDebugEnabled() {
 		return _impl.isDebugEnabled();
 	}
 
-	@Override
+	
 	public void info(String message) {
 		_impl.info(Request.getId() + message);
 	}
 
-	@Override
+	
 	public void info(String format, Object... args) {
 		_impl.info(Request.getId() + format, args);
 	}
 
-	@Override
+	
 	public boolean isInfoEnabled() {
 		return _impl.isInfoEnabled();
 	}
 
-	@Override
+	
 	public void warn(String message) {
 		_impl.warn(Request.getId() + message);
 	}
 
-	@Override
+	
 	public void warn(String format, Object... args) {
 		_impl.warn(Request.getId() + format, args);
 	}
 
-	@Override
+	
 	public boolean isWarnEnabled() {
 		return _impl.isWarnEnabled();
 	}
 
-	@Override
+	
 	public void error(String message) {
 		_impl.error(Request.getId() + message);
 	}
 
-	@Override
+	
 	public void error(String format, Object... args) {
 		_impl.error(Request.getId() + format, args);
 	}
 
-	@Override
+	
 	public void error(Exception ex) {
 		_impl.error(Request.getId(), ex);
 	}
 
-	@Override
+	
 	public void error(String message, Exception ex) {
 		_impl.error(Request.getId() + message, ex);
 	}
@@ -122,7 +122,7 @@ public class Slf4jLogger implements Logger, Serializable {
 		}
 	}
 
-	@Override
+	
 	public boolean isErrorEnabled() {
 		return _impl.isErrorEnabled();
 	}

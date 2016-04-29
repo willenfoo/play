@@ -12,31 +12,31 @@ import org.springframework.util.Assert;
 
 public class ConfigurationFactoryBean implements InitializingBean, FactoryBean<Configuration>, ApplicationContextAware {
 
-    @Override
+    
     public Configuration getObject() throws Exception {
         return configuration;
     }
 
-    @Override
+    
     public Class<?> getObjectType() {
         return Configuration.class;
     }
 
-    @Override
+    
     public boolean isSingleton() {
         return true;
     }
 
     private Configuration configuration;
 
-    @Override
+    
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         _context = applicationContext;
     }
 
     private ApplicationContext _context;
 
-    @Override
+    
     public void afterPropertiesSet() throws Exception {
         
         Assert.hasLength(_name);

@@ -9,7 +9,7 @@ public class ServiceDispatcherServlet extends DispatcherServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Override
+	
 	protected void initStrategies(ApplicationContext context) {
 		super.initStrategies(context);
 		for (AbstractHandlerMapping handlerMapping : BeanFactoryUtils

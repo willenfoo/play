@@ -18,7 +18,7 @@ public class DaoGenFromDB extends DaoGen {
     this.table = table;
   }
 
-  @Override
+  
   protected DB load() throws Exception {
     return new DB(dbName, table, datasource);
   }

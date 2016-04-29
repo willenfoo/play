@@ -14,25 +14,25 @@ import org.apache.ibatis.type.JdbcType;
 
 public class StreamBaseTypeHandler extends BaseTypeHandler<InputStream> {
 
-  @Override
+  
   public void setNonNullParameter(PreparedStatement ps, int i, InputStream parameter,
       JdbcType jdbcType) throws SQLException {
     ps.setBinaryStream(i, parameter);
   }
 
-  @Override
+  
   public InputStream getNullableResult(ResultSet rs, String columnName) throws SQLException {
     InputStream is = rs.getBinaryStream(columnName);
     return read(is);//
   }
 
-  @Override
+  
   public InputStream getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
     InputStream is = rs.getBinaryStream(columnIndex);
     return read(is);
   }
 
-  @Override
+  
   public InputStream getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
     InputStream is = cs.getBlob(columnIndex).getBinaryStream();
     return read(is);

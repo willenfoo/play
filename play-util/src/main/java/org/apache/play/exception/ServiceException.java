@@ -48,7 +48,7 @@ public class ServiceException extends ExceptionSupport {
         super(iExceptionBody,ex,args);
     }
 
-    @Override
+    
     public ExceptionLevel getLevel() {
         return ExceptionLevel.SERVICE;
     }

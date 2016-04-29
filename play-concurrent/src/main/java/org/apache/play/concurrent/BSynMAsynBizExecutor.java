@@ -97,7 +97,7 @@ public abstract class BSynMAsynBizExecutor<T> {
                 final T single = its.next();
                 tmp++;
                 new SynMAsynBizExecutor(map, bizMethod, idx) {
-                    @Override
+                    
                     public void execute() {
                         try {
                             executes(single);
@@ -154,7 +154,7 @@ public abstract class BSynMAsynBizExecutor<T> {
         datas.add(7);
 
         new BSynMAsynBizExecutor<Integer>("test", 5, datas) {
-            @Override
+            
             public void executes(Integer object) {
                 System.out.println(object);
             }

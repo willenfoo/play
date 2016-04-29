@@ -199,7 +199,7 @@ public abstract class SynLockerExecutor {
     public abstract void execute();
 
     private static class HouseKeeper extends Thread {
-        @Override
+        
         public void run() {
             InterProcessMutex lock = null;
             while (true) {
@@ -254,7 +254,7 @@ public abstract class SynLockerExecutor {
             public void run() {
                 try {
                     new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
-                        @Override
+                        
                         public void execute() {
                             try {
                             	for (int i = 0; i < 100; i++) {
@@ -277,7 +277,7 @@ public abstract class SynLockerExecutor {
             public void run() {
                 try {
                     new SynLockerExecutor(SynLockerExecutor.class, "test0", 1, true) {
-                        @Override
+                        
                         public void execute() {
                         	try {
                             	for (int i = 100; i < 200; i++) {

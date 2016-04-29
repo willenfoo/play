@@ -141,7 +141,7 @@ public class DynamicDataSource extends PrefixPriorityConfig implements
 				this.delegate = basicDataSource_;
 				LogUtils.timeused(logger, prefix_ + "reloaded", start);
 				new AsynBizExecutor(this.getClass().getName()) {
-					@Override
+					
 					public void execute() {
 						try {
 							long start = System.currentTimeMillis();
@@ -444,12 +444,12 @@ public class DynamicDataSource extends PrefixPriorityConfig implements
 				.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
 	}
 
-	@Override
+	
 	public int getMaxOpenPreparedStatements() {
 		return this.delegate.getMaxOpenPreparedStatements();
 	}
 
-	@Override
+	
 	public void setMaxOpenPreparedStatements(int maxOpenPreparedStatements) {
 		this.delegate.setMaxOpenPreparedStatements(maxOpenPreparedStatements);
 	}
@@ -506,7 +506,7 @@ public class DynamicDataSource extends PrefixPriorityConfig implements
 		throw new SQLFeatureNotSupportedException("not implements");
 	}
 
-	@Override
+	
 	@PostConstruct
 	public void init() {
 		this.setFileName(System.getProperty(DB_CONFIG_FILE,

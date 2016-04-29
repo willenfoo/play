@@ -217,7 +217,7 @@ public abstract class AbsCacheableImpl<T extends IModel> implements
 	/**
 	 * ［表、外键］缓存版本号升级
 	 */
-	@Override
+	
 	public long incrTabVersion(int callFrom, String tabNameSuffix) {
 
 		if (callFrom == 1) {// 主键操作
@@ -257,7 +257,7 @@ public abstract class AbsCacheableImpl<T extends IModel> implements
 	/**
 	 * 集合级缓存［表级、外键］版本号
 	 */
-	@Override
+	
 	public Long getTabVersion(String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -297,7 +297,7 @@ public abstract class AbsCacheableImpl<T extends IModel> implements
 	/**
 	 * ［主键、外键］缓存版本号升级
 	 */
-	@Override
+	
 	public long incrRecVersion(String tabNameSuffix) {
 
 		if (!fkCacheable() && !pkCacheable()) {
@@ -329,7 +329,7 @@ public abstract class AbsCacheableImpl<T extends IModel> implements
 	/**
 	 * 记录［主键、外键］级缓存版本号
 	 */
-	@Override
+	
 	public Long getRecVersion(String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -663,7 +663,7 @@ public abstract class AbsCacheableImpl<T extends IModel> implements
 		return returnboolean;// 表级缓存
 	}
 
-	@Override
+	
 	public Integer getThresholds() {
 
 		Integer returnInteger = cacheConfig.getInteger(redisCache.getPrefix()

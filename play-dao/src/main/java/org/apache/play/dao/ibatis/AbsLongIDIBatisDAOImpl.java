@@ -37,7 +37,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 	 * Logger for this class
 	 */
 
-	@Override
+	
 	public Long[] batchInsert(List<Map<String, Object>> datas,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -51,7 +51,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 		return returnLongArray;
 	}
 
-	@Override
+	
 	public Long[] batchInsert(List<String> cols,
 			List<Map<String, Object>> datas, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -102,7 +102,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@Cacheable(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "#root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public T queryById(Long id, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -120,7 +120,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@Cacheable(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "!#master and #root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public T queryById(Long id, Boolean master, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -163,7 +163,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@CacheEvict(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", condition = "#root.target.pkCacheable()")
-	@Override
+	
 	public Integer deleteById(Long id, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -200,7 +200,7 @@ public abstract class AbsLongIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@CacheEvict(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", condition = "#root.target.pkCacheable()")
-	@Override
+	
 	public Integer updateById(Long id, Map<String, Object> newValue,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {

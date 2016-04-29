@@ -49,7 +49,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
     IFKDAO<T> {
  
   @CacheEvict(value = "defaultCache", key = FkCacheKeyPrefixExpress + "", condition = "#root.target.fkCacheable()")
-  @Override
+  
   public Integer deleteByFK(String property, Object fkValue, String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
       logger
@@ -89,7 +89,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
 
   @CacheEvict(value = "defaultCache", key = FkCacheKeyPrefixExpress
       + ".concat('@').concat(#root.target.serializable(#attchParams))", condition = "#root.target.fkCacheable()")
-  @Override
+  
   public Integer deleteByFK(String property, Object fkValue, Map<String, Object> attchParams,
       String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
@@ -133,7 +133,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
 
   @CacheOpParams(time = ONE_DAY)
   @Cacheable(value = "defaultCache", key = FkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "#root.target.fkCacheable() and #root.target.enable()")
-  @Override
+  
   public List<T> queryByFK(String property, Object fkValue, String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
       logger
@@ -172,7 +172,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
   @CacheOpParams(time = ONE_DAY)
   @Cacheable(value = "defaultCache", key = FkCacheKeyPrefixExpress
       + ".concat('@').concat(#root.target.serializable(#attchParams))", unless = "#result == null", condition = "#root.target.fkCacheable() and #root.target.enable()")
-  @Override
+  
   public List<T> queryByFK(String property, Object fkValue, Map<String, Object> attchParams,
       String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
@@ -213,7 +213,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
 
   @CacheOpParams(time = ONE_DAY)
   @Cacheable(value = "defaultCache", key = FkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "!#master and #root.target.fkCacheable() and #root.target.enable()")
-  @Override
+  
   public List<T> queryByFK(String property, Object fkValue, Boolean master, String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
       logger
@@ -252,7 +252,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
   @CacheOpParams(time = ONE_DAY)
   @Cacheable(value = "defaultCache", key = FkCacheKeyPrefixExpress
       + ".concat('@').concat(#root.target.serializable(#attchParams))", unless = "#result == null", condition = "!#master and #root.target.fkCacheable() and #root.target.enable()")
-  @Override
+  
   public List<T> queryByFK(String property, Object fkValue, Map<String, Object> attchParams,
       Boolean master, String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
@@ -291,7 +291,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
   }
 
   @CacheEvict(value = "defaultCache", key = FkCacheKeyPrefixExpress + "", condition = "#root.target.fkCacheable()")
-  @Override
+  
   public Integer updateByFK(String property, Object fkValue, Map<String, Object> newValue,
       String tabNameSuffix) {
     if (logger.isDebugEnabled()) {
@@ -340,7 +340,7 @@ public abstract class AbsFKIBatisDAOImpl<T extends IModel> extends AbsIBatisDAOI
 
   @CacheEvict(value = "defaultCache", key = FkCacheKeyPrefixExpress
       + ".concat('@').concat(#root.target.serializable(#attchParams))", condition = "#root.target.fkCacheable()")
-  @Override
+  
   public Integer updateByFK(String property, Object fkValue, Map<String, Object> attchParams,
       Map<String, Object> newValue, String tabNameSuffix) {
     if (logger.isDebugEnabled()) {

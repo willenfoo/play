@@ -92,7 +92,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 
 	@CacheEvict(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", condition = "#root.target.cacheable()")
-	@Override
+	
 	public Integer deleteByMap(Map<String, Object> params, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("deleteByMap(Map<String,Object>, String) - start"); //$NON-NLS-1$
@@ -128,7 +128,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 
 	@CacheEvict(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#cond))", condition = "#root.target.cacheable()")
-	@Override
+	
 	public Integer updateByMap(Map<String, Object> newValue,
 			Map<String, Object> cond, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -174,7 +174,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> queryByMap(Map<String, Object> params, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("queryByMap(Map<String,Object>, String) - start"); //$NON-NLS-1$
@@ -209,7 +209,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> queryByMap(Map<String, Object> params, String orders,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -247,7 +247,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<String> queryIdsByMap(Map<String, Object> params,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -281,7 +281,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<String> queryIdsByMap(Map<String, Object> params,
 			String orders, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -317,7 +317,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List queryIdsByMap(Map<String, Object> params, Boolean master,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -353,7 +353,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List queryIdsByMap(Map<String, Object> params, String orders,
 			Boolean master, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -391,7 +391,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> queryByMap(Map<String, Object> params, Boolean master,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -428,7 +428,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> queryByMap(Map<String, Object> params, String orders,
 			Boolean master, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -468,7 +468,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat('cnt:').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public Integer countByMap(Map<String, Object> params, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("countByMap(Map<String,Object>, String) - start"); //$NON-NLS-1$
@@ -502,7 +502,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat('cnt:').concat(#root.target.serializable(#params))", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public Integer countByMap(Map<String, Object> params, Boolean master,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -538,7 +538,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat('page:').concat(#root.target.serializable(#params)).concat('@').concat(#page).concat('@').concat(#size)", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> pageQuery(Map<String, Object> params, int page, int size,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -617,7 +617,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat('page:').concat(#root.target.serializable(#params)).concat('@').concat(#page).concat('@').concat(#size).concat('@').concat(#orders)", unless = "#result == null", condition = "#root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> pageQuery(Map<String, Object> params, int page, int size,
 			String orders, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -658,7 +658,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	@CacheOpParams(time = ONE_DAY)
 	@Cacheable(value = "defaultCache", key = TabCacheKeyPrefixExpress
 			+ ".concat('@').concat('page:').concat(#root.target.serializable(#params)).concat('@').concat(#page).concat('@').concat(#size).concat('@').concat(#orders)", unless = "#result == null", condition = "!#master and #root.target.tabCacheable() and #root.target.enable()")
-	@Override
+	
 	public List<T> pageQuery(Map<String, Object> params, int page, int size,
 			String orders, Boolean master, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -923,7 +923,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 		return cols;
 	}
 
-	@Override
+	
 	public List<T> batchQuery(List<Map<String, Object>> datas,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -961,7 +961,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	 * @see com.tower.service.dao.IBatchDAO#batchUpdate(java.util.Map,
 	 * java.util.List, java.lang.String)
 	 */
-	@Override
+	
 	public Integer batchUpdate(Map<String, Object> new_,
 			List<Map<String, Object>> datas, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -1005,7 +1005,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 	 * @see com.tower.service.dao.IBatchDAO#batchDelete(java.util.List,
 	 * java.lang.String)
 	 */
-	@Override
+	
 	public Integer batchDelete(List<Map<String, Object>> datas,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -1059,7 +1059,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 		}
 	}
 
-	@Override
+	
 	public String getTableName() {
 		if (logger.isDebugEnabled()) {
 			logger.debug("getTableName() - start"); //$NON-NLS-1$
@@ -1069,7 +1069,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 				+ ".getTableName（）必须实现");
 	}
 
-	@Override
+	
 	public String get$TowerTabName(String tabNameSuffix) {
 
 		suffixValidate(tabNameSuffix);
@@ -1083,7 +1083,7 @@ public abstract class AbsIBatisDAOImpl<T extends IModel> extends
 		return returnString;
 	}
 
-	@Override
+	
 	public int getVersion() {
 		return 1;
 	}

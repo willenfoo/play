@@ -82,7 +82,7 @@ public abstract class BasicException extends RuntimeException {
      * 获取异常信息.
      * @return String 异常信息
      */
-    @Override
+    
     public String getMessage() {
         return message;
     }

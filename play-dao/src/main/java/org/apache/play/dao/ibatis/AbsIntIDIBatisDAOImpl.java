@@ -36,7 +36,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 	 * Logger for this class
 	 */
 
-	@Override
+	
 	public Integer[] batchInsert(List<Map<String, Object>> datas,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -50,7 +50,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 		return returnIntegerArray;
 	}
 
-	@Override
+	
 	public Integer[] batchInsert(List<String> cols,
 			List<Map<String, Object>> datas, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
@@ -101,7 +101,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@Cacheable(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "#root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public T queryById(Integer id, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -116,7 +116,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@Cacheable(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", unless = "#result == null", condition = "!#master and #root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public T queryById(Integer id, Boolean master, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -157,7 +157,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@CacheEvict(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", condition = "#root.target.pkCacheable()")
-	@Override
+	
 	public Integer deleteById(Integer id, String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(
@@ -194,7 +194,7 @@ public abstract class AbsIntIDIBatisDAOImpl<T extends IModel> extends
 	}
 
 	@CacheEvict(value = "defaultCache", key = PkCacheKeyPrefixExpress + "", condition = "#root.target.pkCacheable()")
-	@Override
+	
 	public Integer updateById(Integer id, Map<String, Object> newValue,
 			String tabNameSuffix) {
 		if (logger.isDebugEnabled()) {

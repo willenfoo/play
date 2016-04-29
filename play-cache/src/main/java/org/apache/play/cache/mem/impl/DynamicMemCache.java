@@ -49,7 +49,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
     public static final boolean DEFAULT_NAGLE_ALGORITHM = true;
     public static final int DEFAULT_HASHING_ALGORITHM = SockIOPool.CONSISTENT_HASH;
 
-    @Override
+    
     public boolean set(String key, Object item) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("set(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -62,7 +62,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean set(String key, Object item, int expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("set(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("int expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -83,7 +83,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         }
     }
 
-    @Override
+    
     public boolean set(String key, Object item, Date expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("set(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("Date expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -96,7 +96,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean add(String key, Object item) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("add(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -109,7 +109,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean add(String key, Object item, int expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("add(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("int expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -122,7 +122,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean add(String key, Object item, Date expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("add(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("Date expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -135,7 +135,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean replace(String key, Object item) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("replace(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -148,7 +148,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean replace(String key, Object item, int expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("replace(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("int expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -161,7 +161,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean replace(String key, Object item, Date expiry) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("replace(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Object item", item).append("Date expiry", expiry).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
@@ -174,7 +174,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public boolean delete(String key) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("delete(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -187,7 +187,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public Object get(String key) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("get(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -200,7 +200,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnObject;
     }
 
-    @Override
+    
     public Object[] get(String[] keys) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("get(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String[] keys", keys).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -213,7 +213,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnObjectArray;
     }
 
-    @Override
+    
     public boolean flush() {
 		if (logger.isDebugEnabled()) {
 			logger.debug("flush() - start"); //$NON-NLS-1$
@@ -226,7 +226,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     public long addOrIncr(String key, long incr) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("addOrIncr(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("long incr", incr).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -239,7 +239,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnlong;
     }
 
-    @Override
+    
     public long incr(String key, long incr) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("incr(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("long incr", incr).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -253,7 +253,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
 
     }
 
-    @Override
+    
     public boolean storeCounter(String key, Long counter) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("storeCounter(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("String key", key).append("Long counter", counter).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -266,7 +266,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnboolean;
     }
 
-    @Override
+    
     @PostConstruct
     public void init() {
 		if (logger.isDebugEnabled()) {
@@ -407,17 +407,17 @@ public class DynamicMemCache extends PrefixPriorityConfig
         this.cacheName = cacheName;
     }
 
-    @Override
+    
     public String getName() {
         return cacheName;
     }
 
-    @Override
+    
     public Object getNativeCache() {
         return mcInstance;
     }
 
-    @Override
+    
     public ValueWrapper get(Object key) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("get(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("Object key", key).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -449,7 +449,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
         return returnT;
     }
 
-    @Override
+    
     public void put(Object key, Object value) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("put(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("Object key", key).append("Object value", value).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
@@ -469,7 +469,7 @@ public class DynamicMemCache extends PrefixPriorityConfig
 		}
     }
 
-    @Override
+    
     public void evict(Object key) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("evict(" + new ToStringBuilder("", StandardToStringStyle.SIMPLE_STYLE).append("Object key", key).toString() + ") - start"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$

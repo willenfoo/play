@@ -287,7 +287,7 @@ public class DynamicConfig implements ConfigFileDict, Constants, Configuration, 
         this.delimiterParsingDisabled = delimiterParsingDisabled;
     }
 
-    @Override
+    
     public final synchronized void onUpdate(Configuration config) {
 
         if (logger.isDebugEnabled()) {

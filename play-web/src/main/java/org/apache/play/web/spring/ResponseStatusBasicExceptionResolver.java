@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
 
 public class ResponseStatusBasicExceptionResolver extends AbstractHandlerExceptionResolver {
 
-	@Override
+	
 	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 
 		try {

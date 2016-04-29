@@ -38,19 +38,19 @@ public class CacheVersionIbatisDAOImpl extends
 	public CacheVersionIbatisDAOImpl() {
 	}
 
-	@Override
+	
 	public Class<CacheVersionMapper> getMapperClass() {
 
 		return CacheVersionMapper.class;
 	}
 
-	@Override
+	
 	public Class<CacheVersion> getModelClass() {
 
 		return CacheVersion.class;
 	}
 
-	@Override
+	
 	public boolean isFk(String property) {
 
 		return CacheVersion.isFk(property);
@@ -60,12 +60,12 @@ public class CacheVersionIbatisDAOImpl extends
 		return "soa_cache_version";
 	}
 
-	@Override
+	
 	public SqlSessionFactory getMasterSessionFactory() {
 		return masterSessionFactory;
 	}
 
-	@Override
+	
 	public SqlSessionFactory getSlaveSessionFactory() {
 		if (slaveSessionFactory == null) {
 			return getMasterSessionFactory();
@@ -73,7 +73,7 @@ public class CacheVersionIbatisDAOImpl extends
 		return slaveSessionFactory;
 	}
 
-	@Override
+	
 	public SqlSessionFactory getMapQuerySessionFactory() {
 		if (mapQuerySessionFactory == null) {
 			return getSlaveSessionFactory();
@@ -115,13 +115,13 @@ public class CacheVersionIbatisDAOImpl extends
 	}
 
 	@Cacheable(value = "defaultCache", key = CacheKeyPrefixExpress + "", unless = "#result == null", condition = "#root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public CacheVersion queryById(String id, String tabNameSuffix) {
 		return queryById(id, false, tabNameSuffix);
 	}
 
 	@Cacheable(value = "defaultCache", key = CacheKeyPrefixExpress  + "", unless = "#result == null", condition = "!#master and #root.target.pkCacheable() and #root.target.enable()")
-	@Override
+	
 	public CacheVersion queryById(String id, Boolean master,
 			String tabNameSuffix) {
 		validate(id);

@@ -29,7 +29,7 @@ public abstract class AsynBizExecutor implements Runnable {
         Executor.execute(this);
     }
 
-    @Override
+    
     public void run() {
         final long start = System.currentTimeMillis();
         Request.setId(this.getReqId());

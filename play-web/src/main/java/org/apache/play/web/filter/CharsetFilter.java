@@ -20,14 +20,14 @@ public class CharsetFilter implements Filter {
 	private Pattern inputCharsetPattern;
 	private String defaultCharset;
 
-	@Override
+	
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.inputCharsetPattern = Pattern.compile("_charset_=([\\w-]+)", 2);
 		if (this.defaultCharset == null)
 			this.defaultCharset = DEFAULT_CHARSET_VALUE;
 	}
 
-	@Override
+	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		try {
@@ -55,7 +55,7 @@ public class CharsetFilter implements Filter {
 		chain.doFilter(httpServletRequest, response);
 	}
 
-	@Override
+	
 	public void destroy() {
 	}
 
