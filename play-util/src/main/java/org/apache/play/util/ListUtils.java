@@ -1,5 +1,6 @@
 package org.apache.play.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,4 +28,19 @@ public class ListUtils {
 		return !isEmpty(list);
 	}
 	
+	public static <T> List<T> add(T... values) {
+		if (values != null) {
+			List<T> list = new ArrayList<T>();
+			for (T t : values) {
+				list.add(t);
+			}
+			return list;
+		}
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		System.out.println(isNotEmpty(list));
+	}
 }

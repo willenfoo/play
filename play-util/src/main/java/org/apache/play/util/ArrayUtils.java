@@ -1,5 +1,8 @@
 package org.apache.play.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 数组操作工具类
  * 
@@ -40,4 +43,17 @@ public class ArrayUtils {
 		return null;
 	}
 
+	public static <T> List<T> add(T... values) {
+		if (values != null) {
+			List<T> list = new ArrayList<T>();
+			for (T t : values) {
+				list.add(t);
+			}
+			return list;
+		}
+		return null;
+	}
+	
+
+	
 }
