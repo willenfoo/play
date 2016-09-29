@@ -423,7 +423,7 @@ public class ExcelUtil {
     public static void main(String[] args) {
         HSSFWorkbook hs = null;
          
-        String worksheetTitle = "乘务员返奖记录";
+        String worksheetTitle = "卡券统计条件";
         String[][] userHeader = { { "crewNo", "ID" }, { "crewName", "姓名" } };
         ExcelUtil exp = new ExcelUtil();
         exp.setSheetName(worksheetTitle);
@@ -452,7 +452,7 @@ public class ExcelUtil {
 
         OutputStream os;
         try {
-            os = new FileOutputStream("E:/TEXT.xlsx");
+            os = new FileOutputStream("E:/TEXT.xls");
             hs.write(os);
         } catch (Exception e) {
         } 

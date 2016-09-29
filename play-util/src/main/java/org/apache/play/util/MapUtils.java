@@ -57,13 +57,25 @@ public class MapUtils {
 		return !isEmpty(map);
 	}
 	
+	public static <T> void cleanNullValue(Map<String, T> map) {
+		for(Map.Entry<String, T> entry: map.entrySet()) {
+			if (entry.getValue() == null) {
+				map.remove(entry.getKey());
+			} else if (entry.getValue() instanceof String) {
+				if (StringUtils.isEmpty(entry.getValue().toString())) {
+					map.remove(entry.getKey());
+				}
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println(isEmpty(map));
 		System.out.println(isNotEmpty(map));
 		
-		/*map.put("key", 111);*/
-		String value = getValue(map, "key");
+		map.put("key", 111);
+		Object value = getValue(map, "key");
 		System.out.println(value);
 	}
 }
