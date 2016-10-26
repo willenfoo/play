@@ -1,4 +1,4 @@
-package org.apache.play.cache;
+package org.apache.play.util;
 
 /**
  * 客户端调用服务时，服务端缓存否启用开关；

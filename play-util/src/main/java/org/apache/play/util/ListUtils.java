@@ -28,6 +28,11 @@ public class ListUtils {
 		return !isEmpty(list);
 	}
 	
+	/**
+	 * 往list中添加数据
+	 * @param values
+	 * @return
+	 */
 	public static <T> List<T> add(T... values) {
 		if (values != null) {
 			List<T> list = new ArrayList<T>();

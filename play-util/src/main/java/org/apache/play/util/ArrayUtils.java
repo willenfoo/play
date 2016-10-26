@@ -1,36 +1,19 @@
 package org.apache.play.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 数组操作工具类
  * 
  * @author willenfoo
  *
  */
-public class ArrayUtils {
+public class ArrayUtils extends org.apache.commons.lang3.ArrayUtils {
+
 
 	/**
-	 * 判断是否为空
-	 * 
+	 * 把数组转换成字符串，用盗号分割
 	 * @param array
 	 * @return
 	 */
-	public static <T> boolean isEmpty(T[] array) {
-		return array == null || array.length == 0;
-	}
-
-	/**
-	 * 判断是否不为空
-	 * 
-	 * @param array
-	 * @return
-	 */
-	public static <T> boolean isNotEmpty(T[] array) {
-		return !isEmpty(array);
-	}
-
 	public static <T> String arrayToString(T[] array) {
 		if (array != null) {
 			StringBuilder sb = new StringBuilder();
@@ -42,18 +25,9 @@ public class ArrayUtils {
 		}
 		return null;
 	}
-
-	public static <T> List<T> add(T... values) {
-		if (values != null) {
-			List<T> list = new ArrayList<T>();
-			for (T t : values) {
-				list.add(t);
-			}
-			return list;
-		}
-		return null;
+	
+	public static void main(String[] args) {
+		String[] array = {"1","2"};
+		System.out.println(arrayToString(array));
 	}
-	
-
-	
 }

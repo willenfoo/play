@@ -7,7 +7,7 @@ import javax.crypto.Cipher;
 public class DesUtils {
 
 	/** 字符串默认键值 */
-	private static String strDefaultKey = "national";
+	private static String strDefaultKey = "a";
 
 	/** 加密工具 */
 	private static Cipher encryptCipher = null;
@@ -201,7 +201,6 @@ public class DesUtils {
 	
 	/**
 	 * main方法 。
-	 * 
 	 * @author 刘尧兴
 	 * @param args
 	 */

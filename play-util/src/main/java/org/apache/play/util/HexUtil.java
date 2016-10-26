@@ -12,9 +12,7 @@ public class HexUtil {
 
     /**
      * Converts a byte array to hex string.
-     * 
-     * @param b -
-     *            the input byte array
+     * @param b - the input byte array
      * @return hex string representation of b.
      */
     
@@ -46,4 +44,8 @@ public class HexUtil {
 
     private static final String HEX_CHARS = "0123456789abcdef";
 
+    public static void main(String[] args) {
+		System.out.println(toHexString("aaaa".getBytes()));
+		System.out.println(toByteArray("aaaa"));
+	}
 }

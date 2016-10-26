@@ -1,7 +1,9 @@
 package org.apache.play.util;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Map操作工具类
@@ -57,25 +59,36 @@ public class MapUtils {
 		return !isEmpty(map);
 	}
 	
+	/**
+	 * 清楚map值为空的key
+	 * @param map
+	 */
 	public static <T> void cleanNullValue(Map<String, T> map) {
-		for(Map.Entry<String, T> entry: map.entrySet()) {
+		Iterator<Entry<String, T>> it = map.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry<String,T> entry = it.next();
 			if (entry.getValue() == null) {
-				map.remove(entry.getKey());
+				 it.remove(); 
 			} else if (entry.getValue() instanceof String) {
 				if (StringUtils.isEmpty(entry.getValue().toString())) {
-					map.remove(entry.getKey());
+					 it.remove(); 
 				}
 			}
 		}
 	}
 	
 	public static void main(String[] args) {
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Integer> map = new HashMap<String, Integer>();
 		System.out.println(isEmpty(map));
 		System.out.println(isNotEmpty(map));
 		
 		map.put("key", 111);
 		Object value = getValue(map, "key");
 		System.out.println(value);
+		
+		map.put("value", null);
+		System.out.println(map);
+		cleanNullValue(map);
+		System.out.println(map);
 	}
 }
