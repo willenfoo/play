@@ -3,13 +3,12 @@ package org.apache.play.util;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NullAwareBeanUtilsBean {
+public class BeanUtils {
 
 	public static String[] getNullPropertyNames(Object source) {
 		final BeanWrapper src = new BeanWrapperImpl(source);
@@ -28,6 +27,6 @@ public class NullAwareBeanUtilsBean {
 
 	// then use Spring BeanUtils to copy and ignore null
 	public static void copyProperties(Object src, Object target) {
-		BeanUtils.copyProperties(src, target, getNullPropertyNames(src));
+		org.springframework.beans.BeanUtils.copyProperties(src, target, getNullPropertyNames(src));
 	}
 }
